@@ -1,2 +1,2 @@
 # SCJ_NewLogin
-SCJ New Login - Single PAge
+SCJ New Login - Single Page
