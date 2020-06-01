@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+   }
+   
+   html{
+       width: 100vw;
+       height: 100vh;
+   }
+   
+   /* CSS which you need for blurred box */
+   body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: middle;
+    background-image:url(../images/bg-01.svg);
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased; 
+   }
+   
+   .blurred-box{
+     position: relative;
+     width: 30%;
+     height: 530px;
+     top: calc(50% - 255px);
+     border: none;
+     border-bottom-right-radius: 110px;
+     border-top-left-radius: 110px;
+     right: calc(50% - 285px);
+     background: #ffffff00;
+     /* border-radius: 70px; */
+     overflow: hidden;
+     box-shadow: 10px 10px 89px #aaaaaa38;
+   }
+   
+   .blurred-box:after{
+    content: '';
+    width: 300px;
+    height: 300px;
+    background: inherit; 
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;  
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+    filter: blur(10px);
+   }
+   
+   
+   /* Form which you dont need */
+   .user-login-box{
+     position: relative;
+     /* margin-top: 50px; */
+     text-align: center;
+     z-index: 1;
+   }
+   .user-login-box > *{
+     display: inline-block;
+     width: 90%;
+   }
+   
+   .user-icon{
+     width: 120px;
+     margin-top: 19px;
+     background-position: center;
+     height: 120px;
+     position: relative;
+     /* background-color: #ffffff00; */
+     border-radius: 11%;
+     background-position-y: center;
+     background-size: contain;
+     background-size: 100%;
+     background-repeat: no-repeat;
+     background-image: url(../images/logo.svg);
+   }
+   
+   .sys-name{
+	   font-size: 23px;
+	   font-weight: bold;
+     margin-top: 13px;
+     margin-bottom: 15px;
+     color: #427c6d;
+   }
+   
+   input{
+     width: 120px;
+     height: 18px;
+     opacity: 0.8;
+     font-weight: bold !important;
+     margin-bottom: 5px;
+     border-radius: 2px !important;
+     padding: 5px 15px !important;
+     border: 0 !important;
+     color: #000 !important;
+   }
+
+   .btn-primary {
+    color: #fff;
+    background-color: #427c6d;
+    border-color: #427c6d;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #b49a5d;
+    border-color: #b49a5d;
+}
+   
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #baa262;
+    border-color: #baa262;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+@media (max-width:1400px) {
+    .blurred-box {
+        width: 300px;
+        right: calc(50% - 151px);
+    }
+}
+
+.form-control {
+    border-bottom: 2px solid #d8d8d8 !important;
+}
+
+.form-control:focus {
+    box-shadow: 10px 10px 89px #aaaaaa38;
+    border-bottom: 2px solid #427c6d !important;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+/* cap */
+
+#container {
+    width: 50%;
+    max-width: 640px;
+    min-width: 240px;
+    margin-left: 25%;
+  }
+  
+  .slide-captcha {
+    background-color: hsl(0, 0%, 75%);
+    border-radius: 25px;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*font-weight: bold;*/
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .slide-captcha div {
+    background-color: hsl(0, 0%, 75%);
+    border-radius: 25px;
+    box-sizing: border-box;
+    color: hsl(0, 0%, 75%);
+    display: block;
+    height: 50px;
+    left: 50px;
+    margin-left: -100%;
+    padding: 0 50px;
+    position: absolute;
+    text-align: center;
+    transition: left 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0), background-color 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0), color 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0);
+    top: 0;
+    width: 100%;
+  }
+  
+  .slide-captcha div.active {
+    transition: left 0s, background-color 0s, color 0s;
+  }
+  
+  .slide-captcha div:after {
+    color: hsl(0, 0%, 75%);
+    content: '\f061';
+    background: #fff;
+    border-radius: 25px;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5em;
+    font-family: 'FontAwesome';
+    height: 44px;
+    line-height: 42px;
+    position: absolute;
+    right: 3px;
+    text-align: center;
+    top: 3px;
+    width: 44px;
+  }
+  
+  .slide-captcha div.active:after {
+    color: hsl(0, 0%, 60%);
+  }
+  
+  .slide-captcha.satisfied div {
+    background-color: hsl(150, 50%, 60%);
+    color: hsl(0, 0%, 100%);
+    left: auto;
+    right: 0;
+  }
+  
+  .slide-captcha.satisfied div:after {
+    color: hsl(150, 50%, 60%);
+    content: '\f00c';
+  }
+  .captcha {
+    background-color: hsl(0, 0%, 88%);
+	  margin-bottom: 8px;
+    border-radius: 25px;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    color: #717171;
+    line-height: 50px;
+    overflow: hidden;
+    display: block;
+    padding: 0 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    //** margin: 10px 0px 0px 33px*/; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .captcha div {
+    background-color: hsl(164, 31%, 37%);
+    border-radius: 25px;
+    box-sizing: border-box;
+    color: hsl(164, 31%, 37%);
+    display: block;
+    height: 50px;
+    left: 50px;
+    margin-left: -100%;
+    padding: 0 50px;
+    position: absolute;
+    text-align: center;
+    transition: left 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0), background-color 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0), color 0.7s cubic-bezier(0.0, 1.0, 0.5, 1.0);
+    top: 0;
+    width: 100%;
+  }
+  
+  .captcha div.active {
+    transition: left 0s, background-color 0s, color 0s;
+  }
+  
+  .captcha div:after {
+    color: hsl(0, 0%, 75%);
+    content: '\f061'; /* arrow-right */
+    background: #fff;
+    border-radius: 25px;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5em;
+    font-family: 'FontAwesome', sans-serif;
+    height: 44px;
+    line-height: 42px;
+    position: absolute;
+    right: 3px;
+    text-align: center;
+    top: 3px;
+    width: 44px;
+  }
+  
+  .captcha div.active:after {
+    color: hsl(0, 0%, 60%);
+  }
+  
+  .captcha.satisfied div {
+    color: hsl(0, 0%, 100%);
+    left: auto;
+    right: 0;
+  }
+  
+  .captcha.satisfied div:after {
+    color: hsl(164, 31%, 37%);
+    content: '\f00c'; /* check */
+  }
+  
+
+/*----------------------------------
+	*** Error Message Style 
+	*** Edite By : ALGOHRY
+-----------------------------------*/
+.has-error .help-block, 
+.has-error .control-label,
+.has-error .radio, 
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label, 
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+    color: #a94442;
+}
+
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+	text-align: right;
+}
+
+.has-error .input-group-addon {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #a94442;
+}
+
+.has-error .form-control {
+    border-color: #a94442 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+}
